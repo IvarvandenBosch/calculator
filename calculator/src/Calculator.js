@@ -21,7 +21,7 @@ function Calculator() {
     // eslint-disable-next-line no-eval
     try {
       const res = eval(`${displayValue}`);
-      setDisplayValue(res)
+      setDisplayValue(`${res}`)
     } catch (error) {
       setDisplayValue("error")
     }
