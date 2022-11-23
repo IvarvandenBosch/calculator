@@ -1,0 +1,161 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.display {
+  border: solid 1px;
+  padding: 10px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  margin-bottom: 20px;
+}
+.calc-grid {
+  display: grid;
+  gap: 3px;
+  width: min-content;
+  grid-template-areas: 
+    "one two three devide CLEAR"
+    "four five six time DEL"
+    "seven eight nine minus equals"
+    "comma zero . plus equals";
+}
+
+.button {
+  width: 100px;
+  padding-block: 20px;
+  text-align: center;
+  background-color: gray;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  user-select: none;
+  font-size: 20px;
+  transition: all .3s;
+  font-weight: bold;
+}
+
+.button:hover {
+  background-color: rgb(97, 97, 97);
+  transition: all ;
+}
+
+.button[data-key="1"] {
+  grid-area: one;
+}
+
+.button[data-key="2"] {
+  grid-area: two;
+}
+
+.button[data-key="3"] {
+  grid-area: three;
+}
+
+.button[data-key="4"] {
+  grid-area: four;
+}
+
+.button[data-key="5"] {
+  grid-area: five;
+}
+
+.button[data-key="6"] {
+  grid-area: six;
+}
+
+
+.button[data-key="7"] {
+  grid-area: seven;
+}
+
+.button[data-key="8"] {
+  grid-area: eight;
+}
+
+.button[data-key="9"] {
+  grid-area: nine;
+}
+
+.button[data-key="0"] {
+  grid-area: zero;
+}
+
+.button[data-key="."] {
+  grid-area: comma;
+}
+
+.button[data-key="/"] {
+  grid-area: devide;
+}
+
+.button[data-key="*"] {
+  grid-area: time;
+}
+
+.button[data-key="-"] {
+  grid-area: minus;
+}
+
+
+.button[data-key="+"] {
+  grid-area: plus;
+}
+
+.button[data-key="CLEAR"] {
+  grid-area: CLEAR;
+  background-color: #FFD850;
+}
+
+.button[data-key="DEL"] {
+  grid-area: DEL;
+  background-color: #FF4F4F;
+}
+
+.button[data-key="="] {
+  grid-area: equals;
+  background-color: #7892D4;
+}
+
+.button[data-key="="]:hover {
+  background-color: #4f72cc;
+  transition: all .3s;
+}
+
+.button[data-key="CLEAR"]:hover {
+  background-color: #d4a600;
+  transition: all .3s;
+}
+
+.button[data-key="DEL"]:hover {
+  background-color: #c72f2f;
+  transition: all .3s;
+}
+
+@media (max-width: 540px) {
+  .button {
+    width: 60px;
+    font-size: 13px;
+    padding-block: 10px;
+  }
+}
+
+@media (max-width: 340px) {
+  .button {
+    width: 40px;
+    font-size: 10px;
+    padding-block: 10px;
+  }
+}
